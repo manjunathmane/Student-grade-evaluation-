@@ -1,20 +1,29 @@
-s1=sys.argv[0]
-s2=sys.argv[1]
-s3=sys.argv[2]
-s4=sys.argv[3]
-s5=sys.argv[4]
-avg_mrks=(sys.argv[0]+sys.argv[1]+sys.argv[2]+sys.argv[3]+sys.argv[4])/
-print("----------Grade Evaluation----------")
-print(f"Average Marks:",avg_mrks)
-
-if(avg_mrks >= 85):
-    print("Grade A")
-
-elif(avg_mrks >= 60):
-    print("Grade B")
-
-elif(avg_mrks >= 40):
-    print("Grade C")
-
+import sys
+if len(sys.argv) == 5:
+    marks1 = sys.argv[0]
+    marks2 = sys.argv[1]
+    marks3 = sys.argv[2]
+    marks4 = sys.argv[3]
+    marks5 = sys.argv[4]
+    
+    print("User provided marks values:")
 else:
-    print("Grade D")
+    marks = [80, 75, 90, 85, 70]
+    print("No input given - using default marks:")
+average = sum(marks) / 5
+
+if average >= 90:
+    grade = 'A'
+elif average >= 75:
+    grade = 'B'
+elif average >= 60:
+    grade = 'C'
+elif average >= 40:
+    grade = 'D'
+else:
+    grade = 'Fail'
+
+print("\n--- Result ---")
+print("Marks:", marks)
+print(f"Average Marks: {average:.2f}")
+print(f"Grade: {grade}")
